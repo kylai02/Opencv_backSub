@@ -96,7 +96,7 @@ def main():
             cv.putText(frame, button['action'], button['textPos'], cv.FONT_HERSHEY_COMPLEX_SMALL, 0.8, yellow)
         
         cv.imshow('Frame', frame)
-        cv.imshow('FG Mask', fgMask)
+        # cv.imshow('FG Mask', fgMask)
         
         for button in buttons:
             a, b = button['vertexA'], button['vertexB']
@@ -117,7 +117,7 @@ def main():
             reset(sum)
                  
         if not chosen == -1:
-            print(chosen)
+            # print(chosen)
             if chosen == 0:
                 showImg('./assets/i_am_suck.webp')
             elif chosen == 1:
