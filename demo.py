@@ -35,6 +35,14 @@ def main():
                 (255, 255, 255), 
                 -1
             )
+            cv.putText(
+                frame,
+                button['action'],
+                (35, 30),
+                cv.FONT_HERSHEY_SIMPLEX,
+                1,
+                (0, 0, 0)
+            )
 
         cv.imshow('Frame', frame)
         cv.imshow('FG Mask', fgMask)
