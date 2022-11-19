@@ -61,6 +61,8 @@ def main():
                 for j in range(a[0], b[0]):
                     sum[button['index']] += fgMask[i][j]
         
+        print(sum[0], fgMask[10][400])
+
         ctr += 1
         chosen = -1
         if ctr >= 24:
