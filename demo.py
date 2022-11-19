@@ -9,21 +9,28 @@ threshold = 500000
 
 buttons = [
     {
-        'action': 'Show Img',
+        'action': '我就爛',
         'textPos': (420, 87),
         'vertexA': (400, 50),
         'vertexB': (640, 120),
         'index': 0
     },
     {
-        'action': 'Show Video',
+        'action': '哭哭柴犬',
         'textPos': (420, 187),
         'vertexA': (400, 150),
         'vertexB': (640, 220),
         'index': 1
     },
     {
-        'action': 'Show Video From YT',
+        'action': '統神端火鍋',
+        'textPos': (420, 287),
+        'vertexA': (400, 250),
+        'vertexB': (640, 320),
+        'index': 2
+    },
+    {
+        'action': 'Rick Roll',
         'textPos': (420, 287),
         'vertexA': (400, 250),
         'vertexB': (640, 320),
@@ -42,11 +49,11 @@ def reshape(img):
 
     return cv.resize(img, (width, height))
 
-def showImg():
-    img = cv.imread('./assets/i_am_suck.webp')
-    cv.imshow('Img', reshape(img))
+def showImg(link):
+    img = cv.imread(link)
+    cv.imshow('Image', reshape(img))
     cv.waitKey()
-    cv.destroyWindow('Img')
+    cv.destroyWindow('Image')
 
 def showVideo(link):
     capture = cv.VideoCapture(link)
@@ -58,7 +65,7 @@ def showVideo(link):
         else:
             break
 
-        if cv.waitKey(15) == ord('q'):
+        if cv.waitKey(15) == ord('z'):
             break
 
 
@@ -111,9 +118,14 @@ def main():
         if not chosen == -1:
             print(chosen)
             if chosen == 0:
-                showImg()
+                showImg('./assets/i_am_suck.webp')
+            elif chosen == 1:
+                showImg('./assets/cry.png')
             elif chosen == 2:
                 showVideo('./assets/hotpot.mp4') 
+            elif chosen == 3:
+                showVideo('./assets/rick_roll.mp4')
+
         keyboard = cv.waitKey(1)
         if keyboard == ord('q'):
             break
