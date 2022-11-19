@@ -5,7 +5,7 @@ white = (255, 255, 255)
 black = (24, 24, 24)
 yellow = (0, 255, 255)
 
-threshold = 50000
+threshold = 100000
 
 buttons = [
     {
@@ -58,7 +58,7 @@ def main():
         # Add button to the frame
         for button in buttons:
             cv.rectangle(frame, button['vertexA'], button['vertexB'], black, -1)
-            cv.putText(frame, button['action'], button['textPos'], cv.FONT_HERSHEY_TRIPLEX, 1, yellow)
+            cv.putText(frame, button['action'], button['textPos'], cv.FONT_HERSHEY_COMPLEX_SMALL, 0.8, yellow)
         
         cv.imshow('Frame', frame)
         cv.imshow('FG Mask', fgMask)
