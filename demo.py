@@ -60,8 +60,6 @@ def main():
             for i in range(a[1], b[1]):
                 for j in range(a[0], b[0]):
                     sum[button['index']] += fgMask[i][j]
-        
-        print(sum[0], fgMask[10][400])
 
         ctr += 1
         chosen = -1
@@ -75,10 +73,13 @@ def main():
                         reset(sum)
             reset(sum)
                  
-            
         if not chosen == -1:
-            print(chosen)
-            reset(sum)
+            if chosen == 1:
+                img = cv.imread('./assets/i_am_suck.jpg')
+                cv.imshow('Img', img)
+                cv.waitKey()
+                cv.destroyWindow('Img')
+            
         
 
 
