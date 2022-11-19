@@ -4,7 +4,7 @@ import cv2 as cv
 white = (255, 255, 255)
 black = (0, 0, 0)
 
-threshold = 5000
+threshold = 50000
 
 buttons = [
     {
@@ -64,6 +64,7 @@ def main():
                     else:
                         chosen = -1
                         reset(sum)
+            reset(sum)
                  
             
         if not chosen == -1:
