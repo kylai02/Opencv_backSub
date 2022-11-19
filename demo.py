@@ -2,7 +2,8 @@ import cv2 as cv
 
 
 white = (255, 255, 255)
-black = (0, 0, 0)
+black = (24, 24, 24)
+yellow = (0, 255, 255)
 
 threshold = 50000
 
@@ -20,6 +21,13 @@ buttons = [
         'vertexA': (400, 110),
         'vertexB': (600, 180),
         'index': 1
+    },
+    {
+        'action': 'Show Video From YT',
+        'textPos': (420, 245),
+        'vertexA': (400, 210),
+        'vertexB': (600, 280),
+        'index': 2
     }
 ]
 
@@ -50,7 +58,7 @@ def main():
         # Add button to the frame
         for button in buttons:
             cv.rectangle(frame, button['vertexA'], button['vertexB'], black, -1)
-            cv.putText(frame, button['action'], button['textPos'], cv.FONT_HERSHEY_SIMPLEX, 1, white)
+            cv.putText(frame, button['action'], button['textPos'], cv.FONT_HERSHEY_TRIPLEX, 1, yellow)
         
         cv.imshow('Frame', frame)
         cv.imshow('FG Mask', fgMask)
@@ -74,15 +82,12 @@ def main():
             reset(sum)
                  
         if not chosen == -1:
+            print(chosen)
             if chosen == 1:
                 img = cv.imread('./assets/i_am_suck.jpg')
                 cv.imshow('Img', img)
                 cv.waitKey()
                 cv.destroyWindow('Img')
-            
-        
-
-
 
         keyboard = cv.waitKey(1)
         if keyboard == ord('q'):
