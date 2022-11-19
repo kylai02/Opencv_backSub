@@ -11,10 +11,14 @@ buttons = [
         'action': 'Show Img',
         'textPos': (410, 47),
         'vertexA': (400, 10),
-        'vertexB': (600, 80),
+        'vertexB': (470, 80),
         'index': 0
     }
 ]
+
+def reset(sum):
+    for i in range(len(sum)):
+        sum[i] = 0
 
 def main():
     # Set up camera
@@ -25,6 +29,8 @@ def main():
 
     backSub = cv.createBackgroundSubtractorMOG2()
     sum = [0, 0, 0, 0]
+    ctr = 0
+
     while True:
         ret, frame = capture.read()
         if frame is None:
@@ -48,9 +54,22 @@ def main():
                 for j in range(a[1], b[1]):
                     sum[button['index']] += fgMask[i][j]
         
-        print(sum[0])
-
+        ctr += 1
+        chosen = -1
+        if ctr >= 24:
+            for i, value in enumerate(sum):
+                if value >= threshold:
+                    if chosen == -1:
+                        chosen = value
+                    else:
+                        chosen = -1
+                        reset(sum)
+                 
             
+        if not chosen == -1:
+            print(chosen)
+            reset(sum)
+        
 
 
 
