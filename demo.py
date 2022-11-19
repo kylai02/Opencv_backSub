@@ -19,8 +19,8 @@ def main():
         cv.imshow('Frame', frame)
         cv.imshow('FG Mask', fgMask)
 
-        keyboard = cv.waitKey(30)
-        if keyboard == 'q':
+        keyboard = cv.waitKey(1)
+        if keyboard == ord('q'):
             break
 
 
