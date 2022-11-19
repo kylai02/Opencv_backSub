@@ -106,7 +106,7 @@ def main():
             if chosen == 0:
                 showImg()
             elif chosen == 2:
-                showVideo('https://www.youtube.com/watch?v=dMTy6C4UiQ4') 
+                showVideo('./assets/hotpot.mp4') 
         keyboard = cv.waitKey(1)
         if keyboard == ord('q'):
             break
