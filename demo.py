@@ -9,14 +9,14 @@ threshold = 50000
 buttons = [
     {
         'action': 'Show Img',
-        'textPos': (400, 45),
+        'textPos': (420, 45),
         'vertexA': (400, 10),
         'vertexB': (600, 80),
         'index': 0
     },
     {
         'action': 'Show Video',
-        'textPos': (400, 145),
+        'textPos': (420, 145),
         'vertexA': (400, 110),
         'vertexB': (600, 180),
         'index': 1
@@ -67,7 +67,7 @@ def main():
             for i, value in enumerate(sum):
                 if value >= threshold:
                     if chosen == -1:
-                        chosen = value
+                        chosen = i
                     else:
                         chosen = -1
                         reset(sum)
@@ -75,7 +75,7 @@ def main():
                  
             
         if not chosen == -1:
-            # print(chosen)
+            print(chosen)
             reset(sum)
         
 
