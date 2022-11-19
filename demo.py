@@ -9,16 +9,16 @@ threshold = 50000
 buttons = [
     {
         'action': 'Show Img',
-        'textPos': (410, 47),
-        'vertexA': (400, 10),
-        'vertexB': (470, 80),
+        'textPos': (45, 400),
+        'vertexA': (10, 400),
+        'vertexB': (80, 600),
         'index': 0
     },
     {
         'action': 'Show Video',
-        'textPos': (410, 147),
-        'vertexA': (400, 110),
-        'vertexB': (470, 180),
+        'textPos': (145, 400),
+        'vertexA': (110, 400),
+        'vertexB': (180, 600),
         'index': 1
     }
 ]
@@ -60,7 +60,7 @@ def main():
             for i in range(a[0], b[0]):
                 for j in range(a[1], b[1]):
                     sum[button['index']] += fgMask[i][j]
-        print(len(fgMask), len(fgMask[0]))
+        
         ctr += 1
         chosen = -1
         if ctr >= 24:
