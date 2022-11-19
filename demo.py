@@ -23,7 +23,7 @@ buttons = [
         'index': 1
     },
     {
-        'action': 'Show Video \nFrom YT',
+        'action': 'Show Video From YT',
         'textPos': (420, 287),
         'vertexA': (400, 250),
         'vertexB': (640, 320),
@@ -38,7 +38,7 @@ def reset(sum):
 def reshape(img):
     shape = img.shape
     width = 800
-    height = int(width * (img[0] / img[1]))
+    height = int(width * (shape[0] / shape[1]))
 
     return cv.resize(img, (width, height))
 
@@ -54,11 +54,11 @@ def showVideo(link):
         ret, frame = capture.read()
 
         if ret:
-            cv.imshow(reshape(frame))
+            cv.imshow('Video', reshape(frame))
         else:
             break
 
-        if cv.waitKey(1) == ord('q'):
+        if cv.waitKey(15) == ord('q'):
             break
 
 
