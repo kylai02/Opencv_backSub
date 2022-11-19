@@ -9,21 +9,21 @@ threshold = 500000
 
 buttons = [
     {
-        'action': '我就爛',
+        'action': 'I am suck',
         'textPos': (420, 87),
         'vertexA': (400, 50),
         'vertexB': (640, 120),
         'index': 0
     },
     {
-        'action': '哭哭柴犬',
+        'action': 'Cry Dog',
         'textPos': (420, 187),
         'vertexA': (400, 150),
         'vertexB': (640, 220),
         'index': 1
     },
     {
-        'action': '統神端火鍋',
+        'action': 'Hotpot',
         'textPos': (420, 287),
         'vertexA': (400, 250),
         'vertexB': (640, 320),
@@ -31,10 +31,10 @@ buttons = [
     },
     {
         'action': 'Rick Roll',
-        'textPos': (420, 287),
-        'vertexA': (400, 250),
-        'vertexB': (640, 320),
-        'index': 2
+        'textPos': (420, 387),
+        'vertexA': (400, 350),
+        'vertexB': (640, 420),
+        'index': 3
     }
 ]
 
