@@ -34,10 +34,12 @@ def main():
         for button in buttons:
             cv.rectangle(frame, button['vertexA'], button['vertexB'], black, -1)
             cv.putText(frame, button['action'], button['textPos'], cv.FONT_HERSHEY_SIMPLEX, 1, white)
+        
+
 
         cv.imshow('Frame', frame)
         cv.imshow('FG Mask', fgMask)
-
+        print(fgMask[10][10])
         keyboard = cv.waitKey(1)
         if keyboard == ord('q'):
             break
