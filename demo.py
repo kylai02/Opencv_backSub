@@ -7,9 +7,9 @@ black = (0, 0, 0)
 buttons = [
     {
         'action': 'Show Img',
-        'textPos': (450, 50),
+        'textPos': (450, 45),
         'vertexA': (400, 10),
-        'vertexB': (600, 100)
+        'vertexB': (600, 80)
     }
 ]
 
