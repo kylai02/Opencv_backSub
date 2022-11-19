@@ -11,8 +11,15 @@ buttons = [
         'action': 'Show Img',
         'textPos': (410, 47),
         'vertexA': (400, 10),
-        'vertexB': (470, 80),
+        'vertexB': (600, 80),
         'index': 0
+    },
+    {
+        'action': 'Show Video',
+        'textPos': (410, 147),
+        'vertexA': (400, 110),
+        'vertexB': (600, 180),
+        'index': 1
     }
 ]
 
@@ -68,7 +75,7 @@ def main():
                  
             
         if not chosen == -1:
-            print(chosen)
+            # print(chosen)
             reset(sum)
         
 
