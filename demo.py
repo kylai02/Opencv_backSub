@@ -10,29 +10,29 @@ threshold = 500000
 buttons = [
     {
         'action': 'I am suck',
-        'textPos': (420, 87),
-        'vertexA': (400, 50),
+        'textPos': (520, 87),
+        'vertexA': (500, 50),
         'vertexB': (640, 120),
         'index': 0
     },
     {
         'action': 'Cry Dog',
-        'textPos': (420, 187),
-        'vertexA': (400, 150),
+        'textPos': (520, 187),
+        'vertexA': (500, 150),
         'vertexB': (640, 220),
         'index': 1
     },
     {
         'action': 'Hotpot',
-        'textPos': (420, 287),
-        'vertexA': (400, 250),
+        'textPos': (520, 287),
+        'vertexA': (500, 250),
         'vertexB': (640, 320),
         'index': 2
     },
     {
         'action': 'Rick Roll',
-        'textPos': (420, 387),
-        'vertexA': (400, 350),
+        'textPos': (520, 387),
+        'vertexA': (500, 350),
         'vertexB': (640, 420),
         'index': 3
     }
@@ -65,8 +65,9 @@ def showVideo(link):
         else:
             break
 
-        if cv.waitKey(15) == ord('z'):
+        if cv.waitKey(20) == ord('z'):
             break
+    
 
 
 def main():
