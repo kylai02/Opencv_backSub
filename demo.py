@@ -5,28 +5,28 @@ white = (255, 255, 255)
 black = (24, 24, 24)
 yellow = (0, 255, 255)
 
-threshold = 100000
+threshold = 500000
 
 buttons = [
     {
         'action': 'Show Img',
-        'textPos': (420, 45),
-        'vertexA': (400, 10),
-        'vertexB': (600, 80),
+        'textPos': (420, 85),
+        'vertexA': (400, 50),
+        'vertexB': (640, 120),
         'index': 0
     },
     {
         'action': 'Show Video',
-        'textPos': (420, 145),
-        'vertexA': (400, 110),
-        'vertexB': (600, 180),
+        'textPos': (420, 185),
+        'vertexA': (400, 150),
+        'vertexB': (640, 220),
         'index': 1
     },
     {
-        'action': 'Show Video From YT',
-        'textPos': (420, 245),
-        'vertexA': (400, 210),
-        'vertexB': (600, 280),
+        'action': 'Show Video \nFrom YT',
+        'textPos': (420, 285),
+        'vertexA': (400, 250),
+        'vertexB': (640, 320),
         'index': 2
     }
 ]
