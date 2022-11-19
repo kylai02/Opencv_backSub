@@ -35,9 +35,16 @@ def reset(sum):
     for i in range(len(sum)):
         sum[i] = 0
 
+def reshape(img):
+    shape = img.shape
+    width = 800
+    height = int(width * (img[0] / img[1]))
+
+    return cv.resize(img, (width, height))
+
 def showImg():
     img = cv.imread('./assets/i_am_suck.webp')
-    cv.imshow('Img', img)
+    cv.imshow('Img', reshape(img))
     cv.waitKey()
     cv.destroyWindow('Img')
 
@@ -47,7 +54,7 @@ def showVideo(link):
         ret, frame = capture.read()
 
         if ret:
-            cv.imshow(frame)
+            cv.imshow(reshape(frame))
         else:
             break
 
