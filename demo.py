@@ -10,21 +10,21 @@ threshold = 500000
 buttons = [
     {
         'action': 'Show Img',
-        'textPos': (420, 85),
+        'textPos': (420, 87),
         'vertexA': (400, 50),
         'vertexB': (640, 120),
         'index': 0
     },
     {
         'action': 'Show Video',
-        'textPos': (420, 185),
+        'textPos': (420, 187),
         'vertexA': (400, 150),
         'vertexB': (640, 220),
         'index': 1
     },
     {
         'action': 'Show Video \nFrom YT',
-        'textPos': (420, 285),
+        'textPos': (420, 287),
         'vertexA': (400, 250),
         'vertexB': (640, 320),
         'index': 2
@@ -34,6 +34,26 @@ buttons = [
 def reset(sum):
     for i in range(len(sum)):
         sum[i] = 0
+
+def showImg():
+    img = cv.imread('./assets/i_am_suck.webp')
+    cv.imshow('Img', img)
+    cv.waitKey()
+    cv.destroyWindow('Img')
+
+def showVideo(link):
+    capture = cv.VideoCapture(link)
+    while True:
+        ret, frame = capture.read()
+
+        if ret:
+            cv.imshow(frame)
+        else:
+            break
+
+        if cv.waitKey(1) == ord('q'):
+            break
+
 
 def main():
     # Set up camera
@@ -84,11 +104,9 @@ def main():
         if not chosen == -1:
             print(chosen)
             if chosen == 0:
-                img = cv.imread('./assets/i_am_suck.webp')
-                cv.imshow('Img', img)
-                cv.waitKey()
-                cv.destroyWindow('Img')
-
+                showImg()
+            elif chosen == 2:
+                showVideo('https://www.youtube.com/watch?v=dMTy6C4UiQ4') 
         keyboard = cv.waitKey(1)
         if keyboard == ord('q'):
             break
