@@ -1,11 +1,15 @@
 import cv2 as cv
 
 
+white = (255, 255, 255)
+black = (0, 0, 0)
+
 buttons = [
     {
         'action': 'Show Img',
-        'vertexA': (10, 2),
-        'vertexB': (100, 50)
+        'textPos': (35, 30),
+        'vertexA': (10, 10),
+        'vertexB': (500, 50)
     }
 ]
 
@@ -28,21 +32,8 @@ def main():
 
         # Add button to the frame
         for button in buttons:
-            cv.rectangle(
-                frame, 
-                button['vertexA'], 
-                button['vertexB'], 
-                (255, 255, 255), 
-                -1
-            )
-            cv.putText(
-                frame,
-                button['action'],
-                (35, 30),
-                cv.FONT_HERSHEY_SIMPLEX,
-                1,
-                (0, 0, 0)
-            )
+            cv.rectangle(frame, button['vertexA'], button['vertexB'], white, -1)
+            cv.putText(frame, button['action'], button['textPos'], cv.FONT_HERSHEY_SIMPLEX, 1, black)
 
         cv.imshow('Frame', frame)
         cv.imshow('FG Mask', fgMask)
