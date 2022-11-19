@@ -83,8 +83,8 @@ def main():
                  
         if not chosen == -1:
             print(chosen)
-            if chosen == 1:
-                img = cv.imread('./assets/i_am_suck.jpg')
+            if chosen == 0:
+                img = cv.imread('./assets/i_am_suck.webp')
                 cv.imshow('Img', img)
                 cv.waitKey()
                 cv.destroyWindow('Img')
