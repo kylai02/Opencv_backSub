@@ -4,12 +4,15 @@ import cv2 as cv
 white = (255, 255, 255)
 black = (0, 0, 0)
 
+threshold = 5000
+
 buttons = [
     {
         'action': 'Show Img',
-        'textPos': (450, 45),
+        'textPos': (410, 47),
         'vertexA': (400, 10),
-        'vertexB': (600, 80)
+        'vertexB': (600, 80),
+        'index': 0
     }
 ]
 
@@ -21,6 +24,7 @@ def main():
         exit(0)
 
     backSub = cv.createBackgroundSubtractorMOG2()
+    sum = [0, 0, 0, 0]
     while True:
         ret, frame = capture.read()
         if frame is None:
@@ -35,11 +39,21 @@ def main():
             cv.rectangle(frame, button['vertexA'], button['vertexB'], black, -1)
             cv.putText(frame, button['action'], button['textPos'], cv.FONT_HERSHEY_SIMPLEX, 1, white)
         
-
-
         cv.imshow('Frame', frame)
         cv.imshow('FG Mask', fgMask)
-        print(fgMask[10][10])
+        
+        for button in buttons:
+            a, b = button['vertexA'], button['vertexB']
+            for i in range(a[0], b[0]):
+                for j in range(a[1], b[1]):
+                    sum[button['index']] += fgMask[i][j]
+        
+        print(sum[0])
+
+            
+
+
+
         keyboard = cv.waitKey(1)
         if keyboard == ord('q'):
             break
